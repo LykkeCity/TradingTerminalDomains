@@ -5,6 +5,6 @@ namespace Lykke.Terminal.Domain.Exchange
 {
     public interface IActiveOrderService
     {
-        Task<IEnumerable<MarketOrder>> GetActiveOrders(string clientId);
+        Task<IEnumerable<MarketOrder>> GetActiveOrdersAsync(string clientId);
     }
 }

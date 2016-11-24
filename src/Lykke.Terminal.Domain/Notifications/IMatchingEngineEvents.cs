@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Lykke.Terminal.Domain.Accounts;
 using Lykke.Terminal.Domain.Exchange;
 using Lykke.Terminal.Domain.Messaging.Dtos;
@@ -11,7 +12,7 @@ namespace Lykke.Terminal.Domain.Notifications
 
         Task AssetPairPriceUpdatedAsync(IAssetPairQuote assetPairQuote);
 
-        Task ActiveOrdersUpdatedAsync(string accountId);
+        Task ActiveOrdersUpdatedAsync(IEnumerable<MarketOrder> orders);
 
         Task OrderBookUpdatedAsync(OrderBookMessageDto message);
     }
