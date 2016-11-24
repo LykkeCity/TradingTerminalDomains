@@ -9,6 +9,6 @@ namespace Lykke.Terminal.Domain.Messaging
         Task SendMessageAsync<T>(string topic, IEnumerable<string> subscriberList, T message);
 
         Task SubscribeAsync<T>(string topic, IEnumerable<string> subscriberList,
-            Func<T, IBrokerMessageContext, Task> messageCallbackAsyncFunc);
+            Func<T, IBrokerMessageContext, Task> messageCallbackAsyncFunc, BrokerExchangeType type);
     }
 }
