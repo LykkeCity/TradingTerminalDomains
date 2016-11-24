@@ -5,6 +5,6 @@ namespace Lykke.Terminal.Domain.Exchange
 {
     public interface IOrderBookService
     {
-        Task<IEnumerable<OrderBook>> GetOrderBookAsync();
+        Task<IEnumerable<OrderBookDto>> GetOrderBookAsync();
     }
 }

@@ -2,14 +2,14 @@
 
 namespace Lykke.Terminal.Domain.Exchange
 {
-    public class OrderBook
+    public class OrderBookDto
     {
         public string Symbol { get; set; }
-        public IEnumerable<OrderBookDetails> BuyOrders { get; set; }
-        public IEnumerable<OrderBookDetails> SellOrders { get; set; }
+        public IEnumerable<OrderBookDetailsDto> BuyOrders { get; set; }
+        public IEnumerable<OrderBookDetailsDto> SellOrders { get; set; }
     }
 
-    public class OrderBookDetails
+    public class OrderBookDetailsDto
     {
         public double Volume { get; set; }
         public double Price { get; set; }

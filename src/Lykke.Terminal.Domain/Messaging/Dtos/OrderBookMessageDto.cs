@@ -9,7 +9,7 @@ namespace Lykke.Terminal.Domain.Messaging.Dtos
         public string AssetPair { get; set; }
         public bool IsBuy { get; set; }
         public DateTime Timestamp { get; set; }
-        public IEnumerable<OrderBookDetails> Prices { get; set; }
+        public IEnumerable<OrderBookDetailsDto> Prices { get; set; }
 
     }
 }
