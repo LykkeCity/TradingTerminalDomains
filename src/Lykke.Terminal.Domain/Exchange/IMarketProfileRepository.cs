@@ -23,6 +23,17 @@ namespace Lykke.Terminal.Domain.Exchange
         public double Bid { get; set; }
 
         public double Ask { get; set; }
+
+        public static AssetPairQuote Create(IAssetPairQuote src)
+        {
+            return new AssetPairQuote
+            {
+                AssetPairId = src.AssetPairId,
+                DateTime = src.DateTime,
+                Bid = src.Bid,
+                Ask = src.Ask
+            };
+        }
     }
 
     public interface IMarketProfileRepository : IRepository<IAssetPairQuote>
