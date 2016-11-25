@@ -8,7 +8,7 @@ namespace Lykke.Terminal.Domain.Notifications
 {
     public interface IMatchingEngineEvents
     {
-        Task AccountUpdatedAsync(IAccountInfo account);
+        Task AccountUpdatedAsync(AccountInfoDto account);
 
         Task AssetPairPriceUpdatedAsync(IAssetPairQuote assetPairQuote);
 

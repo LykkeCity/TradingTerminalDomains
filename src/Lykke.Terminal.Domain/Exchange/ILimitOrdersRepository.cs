@@ -16,6 +16,7 @@ namespace Lykke.Terminal.Domain.Exchange
 
     public class LimitOrder : ILimitOrder
     {
+        public string TradingAccountId { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Id { get; set; }
         public string ClientId { get; set; }

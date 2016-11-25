@@ -31,6 +31,7 @@ namespace Lykke.Terminal.Domain.Exchange
     {
         string Id { get; }
         string ClientId { get; }
+        string TradingAccountId { get; }
         DateTime CreatedAt { get; }
         double Volume { get; }
         double Price { get; }

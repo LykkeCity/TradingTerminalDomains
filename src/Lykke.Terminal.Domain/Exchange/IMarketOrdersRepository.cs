@@ -22,6 +22,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public string Uid { get; set; }
 
         public string ClientId { get; set; }
+        public string TradingAccountId { get; set; }
 
         public DateTime CreatedAt { get; set; }
 
