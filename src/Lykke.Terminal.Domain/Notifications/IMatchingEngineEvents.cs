@@ -12,7 +12,7 @@ namespace Lykke.Terminal.Domain.Notifications
 
         Task AssetPairPriceUpdatedAsync(IAssetPairQuote assetPairQuote);
 
-        Task ActiveOrdersUpdatedAsync(IEnumerable<MarketOrder> orders);
+        Task ActiveOrdersUpdatedAsync(IEnumerable<OrderBase> orders);
 
         Task OrderBookUpdatedAsync(OrderBookMessageDto message);
     }

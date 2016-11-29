@@ -10,20 +10,16 @@ namespace Lykke.Terminal.Domain.Exchange
 
     public enum OrderStatus
     {
-        //Init status, limit order in order book
-        InOrderBook,
-        //Partially matched
-        Processing,
-        //Fully matched
-        Matched,
-        //Not enough funds on account
-        NotEnoughFunds,
-        //No liquidity
-        NoLiquidity,
-        //Unknown asset
-        UnknownAsset,
-        //Cancelled
+        Pending,
+        Active,
+        Done,
         Cancelled
+    }
+
+    public enum OrderComment
+    {
+        //closed since stopout amount is reached
+        StopOut
     }
 
 
@@ -37,7 +33,22 @@ namespace Lykke.Terminal.Domain.Exchange
         double Price { get; }
         string AssetPairId { get; }
         string Status { get; }
-        string Uid { get; }
+        double DefinedPrice { get; }
+        DateTime LastModified { get; }
+    }
+
+    public class OrderBase : IOrderBase
+    {
+        public string Id { get; set; }
+        public string ClientId { get; set; }
+        public string TradingAccountId { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public double Volume { get; set; }
+        public double Price { get; set; }
+        public string AssetPairId { get; set; }
+        public string Status { get; set; }
+        public double DefinedPrice { get; set; }
+        public DateTime LastModified { get; set; }
     }
 
     public static class BaseOrderExt

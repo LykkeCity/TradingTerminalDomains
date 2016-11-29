@@ -6,6 +6,6 @@ namespace Lykke.Terminal.Domain.ApplicationServices.Exchange
 {
     public interface ITransactionHistoryAppService : IAppService
     {
-        Task<IEnumerable<TransactionHistory>> GetTransactionHistoryAsync(string accountId);
+        Task<IEnumerable<DoneOrder>> GetTransactionHistoryAsync(string accountId);
     }
 }
