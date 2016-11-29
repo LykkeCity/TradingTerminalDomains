@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lykke.Terminal.Domain.Exchange
+namespace Lykke.Terminal.Domain.ApplicationServices.Exchange
 {
     public class OrderBookDto
     {

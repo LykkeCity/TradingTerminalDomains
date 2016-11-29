@@ -1,4 +1,4 @@
-﻿namespace Lykke.Terminal.Domain.Trading
+﻿namespace Lykke.Terminal.Domain.ApplicationServices.Trading
 {
     public class OpenOrderContext
     {

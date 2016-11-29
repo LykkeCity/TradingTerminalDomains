@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
+using Lykke.Terminal.Domain.Trading;
 
-namespace Lykke.Terminal.Domain.Trading
+namespace Lykke.Terminal.Domain.ApplicationServices.Trading
 {
-    public interface ITradingService
+    public interface ITradingAppService : IAppService
     {
         Task OpenOrderAsync(OpenOrderContext context);
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lykke.Terminal.Domain.ApplicationServices.Exchange;
 using Lykke.Terminal.Domain.Exchange;
 
 namespace Lykke.Terminal.Domain.Messaging.Dtos

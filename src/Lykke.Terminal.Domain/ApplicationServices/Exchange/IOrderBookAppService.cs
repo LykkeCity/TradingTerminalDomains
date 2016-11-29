@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Lykke.Terminal.Domain.Exchange
+namespace Lykke.Terminal.Domain.ApplicationServices.Exchange
 {
-    public interface IOrderBookService
+    public interface IOrderBookAppService : IAppService
     {
         Task<IEnumerable<OrderBookDto>> GetOrderBookAsync();
     }
