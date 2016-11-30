@@ -18,6 +18,7 @@ namespace Lykke.Terminal.Domain.Exchange
 
     public enum OrderComment
     {
+        None,
         //closed since stopout amount is reached
         StopOut
     }
@@ -32,9 +33,10 @@ namespace Lykke.Terminal.Domain.Exchange
         double Volume { get; }
         double Price { get; }
         string AssetPairId { get; }
-        string Status { get; }
+        OrderStatus Status { get; }
         double DefinedPrice { get; }
         DateTime LastModified { get; }
+        OrderComment Comment { get; }
     }
 
     public class OrderBase : IOrderBase
@@ -46,9 +48,10 @@ namespace Lykke.Terminal.Domain.Exchange
         public double Volume { get; set; }
         public double Price { get; set; }
         public string AssetPairId { get; set; }
-        public string Status { get; set; }
+        public OrderStatus Status { get; set; }
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }
+        public OrderComment Comment { get; set; }
     }
 
     public static class BaseOrderExt
@@ -56,6 +59,11 @@ namespace Lykke.Terminal.Domain.Exchange
         public static OrderAction OrderAction(this IOrderBase orderBase)
         {
             return orderBase.Volume > 0 ? Exchange.OrderAction.Buy : Exchange.OrderAction.Sell;
+        }
+
+        public static bool IsActiveOrder(this IOrderBase order)
+        {
+            return !(!double.IsNaN(order.DefinedPrice) && (Math.Abs(order.DefinedPrice) > 0));
         }
     }
 }

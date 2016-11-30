@@ -12,6 +12,7 @@ namespace Lykke.Terminal.Domain.Accounts
         double Balance { get; }
         string BaseAssetId { get; }
         double Leverage { get; }
+        double StopOut { get; }
     }
 
     public class TradingAccount : ITradingAccount
@@ -21,6 +22,7 @@ namespace Lykke.Terminal.Domain.Accounts
         public double Balance { get; set; }
         public string BaseAssetId { get; set; }
         public double Leverage { get; set; }
+        public double StopOut { get; set; }
 
         public static TradingAccount Create(ITradingAccount src)
         {
@@ -30,7 +32,8 @@ namespace Lykke.Terminal.Domain.Accounts
                 AccountId = src.AccountId,
                 Balance = src.Balance,
                 Leverage = src.Leverage,
-                BaseAssetId = src.BaseAssetId
+                BaseAssetId = src.BaseAssetId,
+                StopOut = src.StopOut
             };
         }
 
@@ -42,7 +45,8 @@ namespace Lykke.Terminal.Domain.Accounts
                 AccountId = accountId,
                 Balance = TradingAccountInfoDefaults.Balance,
                 Leverage = TradingAccountInfoDefaults.Leverage,
-                BaseAssetId = TradingAccountInfoDefaults.BaseAsset
+                BaseAssetId = TradingAccountInfoDefaults.BaseAsset,
+                StopOut = TradingAccountInfoDefaults.StopOut
             };
         }
     }
@@ -52,6 +56,7 @@ namespace Lykke.Terminal.Domain.Accounts
         public static double Balance = 50000;
         public static int Leverage = 200;
         public static string BaseAsset = "EUR";
+        public static double StopOut = 20;
     }
 
     public interface ITradingAccountRepository : IRepository<ITradingAccount>

@@ -19,9 +19,10 @@ namespace Lykke.Terminal.Domain.Exchange
         public double Volume { get; set; }
         public double Price { get; set; }
         public string AssetPairId { get; set; }
-        public string Status { get; set; }
+        public OrderStatus Status { get; set; }
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }
+        public OrderComment Comment { get; set; }
         public double ProfitLoss { get; set; }
     }
 
