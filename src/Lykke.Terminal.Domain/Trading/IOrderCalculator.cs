@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Lykke.Terminal.Domain.Accounts;
 using Lykke.Terminal.Domain.Assets;
 using Lykke.Terminal.Domain.Exchange;
 
@@ -10,6 +11,6 @@ namespace Lykke.Terminal.Domain.Trading
         Task<double> CalculateProfitLossAsync(double openPrice, double closePrice, double volume, IAssetPair assetPair,
             string baseAssetId);
 
-        Task<double> CalculateStopOutAsync(IEnumerable<IOrderBase> orders);
+        Task<double> CalculateMarginUsageAsync(IEnumerable<IOrderBase> orders, ITradingAccount tradingAccount);
     }
 }
