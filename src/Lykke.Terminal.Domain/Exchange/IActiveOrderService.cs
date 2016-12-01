@@ -2,7 +2,7 @@
 
 namespace Lykke.Terminal.Domain.Exchange
 {
-    public interface IActiveOrderSevice
+    public interface IActiveOrderService
     {
         Task MoveOrderToDoneAsync(IOrderBase order, OrderStatus status = OrderStatus.Done,
             OrderComment comment = OrderComment.None, double profitLoss = double.NaN);
