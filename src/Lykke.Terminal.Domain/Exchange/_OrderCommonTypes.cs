@@ -52,6 +52,24 @@ namespace Lykke.Terminal.Domain.Exchange
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }
         public OrderComment Comment { get; set; }
+
+        public static OrderBase Create(IOrderBase src)
+        {
+            return new OrderBase
+            {
+                Id = src.Id,
+                ClientId = src.ClientId,
+                TradingAccountId = src.TradingAccountId,
+                CreatedAt = src.CreatedAt,
+                Volume = src.Volume,
+                Price = src.Price,
+                AssetPairId = src.AssetPairId,
+                Status = src.Status,
+                DefinedPrice = src.DefinedPrice,
+                LastModified = src.LastModified,
+                Comment = src.Comment
+            };
+        }
     }
 
     public static class BaseOrderExt
