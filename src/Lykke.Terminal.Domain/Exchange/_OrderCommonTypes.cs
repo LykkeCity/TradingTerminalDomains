@@ -10,7 +10,7 @@ namespace Lykke.Terminal.Domain.Exchange
 
     public enum OrderStatus
     {
-        Pending,
+        WaitingForExecution,
         Active,
         Done,
         Cancelled
