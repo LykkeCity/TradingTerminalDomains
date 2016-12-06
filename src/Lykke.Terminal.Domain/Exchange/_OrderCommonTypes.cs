@@ -39,6 +39,8 @@ namespace Lykke.Terminal.Domain.Exchange
         double DefinedPrice { get; }
         DateTime LastModified { get; }
         OrderComment Comment { get; }
+        double TakeProfit { get; }
+        double StopLoss { get; }
     }
 
     public class OrderBase : IOrderBase
@@ -54,6 +56,8 @@ namespace Lykke.Terminal.Domain.Exchange
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }
         public OrderComment Comment { get; set; }
+        public double TakeProfit { get; set; }
+        public double StopLoss { get; set; }
 
         public static OrderBase Create(IOrderBase src)
         {
@@ -69,7 +73,9 @@ namespace Lykke.Terminal.Domain.Exchange
                 Status = src.Status,
                 DefinedPrice = src.DefinedPrice,
                 LastModified = src.LastModified,
-                Comment = src.Comment
+                Comment = src.Comment,
+                TakeProfit = src.TakeProfit,
+                StopLoss = src.StopLoss
             };
         }
     }

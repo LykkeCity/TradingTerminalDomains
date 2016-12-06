@@ -23,6 +23,8 @@ namespace Lykke.Terminal.Domain.Exchange
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }
         public OrderComment Comment { get; set; }
+        public double TakeProfit { get; set; }
+        public double StopLoss { get; set; }
         public double ProfitLoss { get; set; }
     }
 
