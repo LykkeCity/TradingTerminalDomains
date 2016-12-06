@@ -22,7 +22,13 @@ namespace Lykke.Terminal.Domain.Exchange
         //closed since stopout amount is reached
         StopOut,
         //no quote exists for presented asset pair
-        NoQuote
+        NoQuote,
+        //manually closed
+        Closed,
+        //closed by take profit
+        TakeProfit,
+        //closed by stop loss
+        StopLoss
     }
 
 
