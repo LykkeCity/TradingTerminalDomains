@@ -20,7 +20,9 @@ namespace Lykke.Terminal.Domain.Exchange
     {
         None,
         //closed since stopout amount is reached
-        StopOut
+        StopOut,
+        //no quote exists for presented asset pair
+        NoQuote
     }
 
 
