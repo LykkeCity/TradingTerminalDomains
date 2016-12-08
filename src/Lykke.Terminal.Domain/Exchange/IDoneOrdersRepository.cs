@@ -25,6 +25,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public OrderComment Comment { get; set; }
         public double TakeProfit { get; set; }
         public double StopLoss { get; set; }
+        public double Commission { get; set; }
         public double ProfitLoss { get; set; }
     }
 

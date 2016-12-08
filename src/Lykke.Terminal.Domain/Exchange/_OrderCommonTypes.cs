@@ -47,6 +47,7 @@ namespace Lykke.Terminal.Domain.Exchange
         OrderComment Comment { get; }
         double TakeProfit { get; }
         double StopLoss { get; }
+        double Commission { get; }
     }
 
     public class OrderBase : IOrderBase
@@ -64,6 +65,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public OrderComment Comment { get; set; }
         public double TakeProfit { get; set; }
         public double StopLoss { get; set; }
+        public double Commission { get; set; }
 
         public static OrderBase Create(IOrderBase src)
         {

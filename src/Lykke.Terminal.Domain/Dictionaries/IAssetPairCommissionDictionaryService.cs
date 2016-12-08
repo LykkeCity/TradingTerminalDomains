@@ -7,6 +7,6 @@ namespace Lykke.Terminal.Domain.Dictionaries
     public interface IAssetPairCommissionDictionaryService
     {
         Task<IEnumerable<IAssetPairCommission>> GetAllAsync();
-        Task<IAssetPairCommission> GetByAssetPairId(string assetPairId);
+        Task<IAssetPairCommission> GetByAssetPairIdAsync(string assetPairId);
     }
 }
