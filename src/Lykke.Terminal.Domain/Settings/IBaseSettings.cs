@@ -37,10 +37,7 @@ namespace Lykke.Terminal.Domain.Settings
 
     public class MatchingEngine
     {
-        [Required]
-        public ServiceBus ServiceBusConnection { get; set; }
-
-        public string SubsriptionName { get; set; }
+        public string QuotesQueueName { get; set; }
     }
 
     public class ServiceBus
