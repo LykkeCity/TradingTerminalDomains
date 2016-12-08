@@ -6,5 +6,7 @@ namespace Lykke.Terminal.Domain.Exchange
     {
         Task MoveOrderToDoneAsync(IOrderBase order, OrderStatus status = OrderStatus.Done,
             OrderComment comment = OrderComment.None, double profitLoss = double.NaN);
+
+        Task<IOrderBase> CreateActiveOrderAsync(IOrderBase currentOrder, IAssetPairQuote currentQuote);
     }
 }
