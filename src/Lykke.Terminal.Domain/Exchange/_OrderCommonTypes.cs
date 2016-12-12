@@ -13,7 +13,8 @@ namespace Lykke.Terminal.Domain.Exchange
         WaitingForExecution,
         Active,
         Done,
-        Cancelled
+        Cancelled,
+        Rejected
     }
 
     public enum OrderComment
@@ -28,7 +29,9 @@ namespace Lykke.Terminal.Domain.Exchange
         //closed by take profit
         TakeProfit,
         //closed by stop loss
-        StopLoss
+        StopLoss,
+        //rejected by trade service
+        TradeService
     }
 
 
