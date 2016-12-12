@@ -6,6 +6,7 @@ namespace Lykke.Terminal.Domain.Settings
     {
         DbSettings Db { get; set; }
         MatchingEngine MatchingEngineSettings { get; set; }
+        TradeServerSettings TradeServerSettings { get; set; }
     }
 
     public class DbSettings
@@ -52,8 +53,16 @@ namespace Lykke.Terminal.Domain.Settings
         public string ServiceBusKey { get; set; }
     }
 
+    public class TradeServerSettings
+    {
+        public string Host { get; set; }
+        public int Port { get; set; }
+    }
+
     public class BaseSettings : IBaseSettings
     {
+        public TradeServerSettings TradeServerSettings { get; set; }
+
         [Required]
         public DbSettings Db { get; set; }
 
