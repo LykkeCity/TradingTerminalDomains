@@ -4,6 +4,6 @@ namespace Lykke.Terminal.Domain.Exchange
 {
     public interface IMarketProfileService
     {
-        Task UpdateMarketProfileAsync(IOrderBook order);
+        Task UpdateMarketProfileAsync(IProductQuote order);
     }
 }

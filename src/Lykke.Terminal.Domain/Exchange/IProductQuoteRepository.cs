@@ -5,32 +5,32 @@ using Lykke.Terminal.Domain.Infrastructure;
 
 namespace Lykke.Terminal.Domain.Exchange
 {
-    public interface IOrderBook
+    public interface IProductQuote
     {
-        string OrderBookId { get; }
+        string ProductQuoteId { get; }
         string AssetPairId { get; set; }
         bool IsBuy { get; set; }
         DateTime Timestamp { get; set; }
-        IEnumerable<OrderBookLine> Prices { get; set; }
+        IEnumerable<ProductQuoteLine> Prices { get; set; }
     }
 
-    public class OrderBook : IOrderBook
+    public class ProductQuote : IProductQuote
     {
-        public string OrderBookId { get; set; }
+        public string ProductQuoteId { get; set; }
         public string AssetPairId { get; set; }
         public bool IsBuy { get; set; }
         public DateTime Timestamp { get; set; }
-        public IEnumerable<OrderBookLine> Prices { get; set; }
+        public IEnumerable<ProductQuoteLine> Prices { get; set; }
     }
 
-    public class OrderBookLine
+    public class ProductQuoteLine
     {
         public double Volume { get; set; }
         public double Price { get; set; }
     }
 
-    public interface IOrderBookRepository : IRepository<IOrderBook>
+    public interface IProductQuoteRepository : IRepository<IProductQuote>
     {
-        Task<IEnumerable<IOrderBook>> GetByAssetPairIdAndBuy(IOrderBook entity);
+        Task<IEnumerable<IProductQuote>> GetByAssetPairIdAndBuy(IProductQuote entity);
     }
 }
