@@ -12,6 +12,6 @@ namespace Lykke.Terminal.Domain.ApplicationServices.Exchange
     public class OrderBookDetailsDto
     {
         public double Volume { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

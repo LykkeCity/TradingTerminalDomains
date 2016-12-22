@@ -7,9 +7,8 @@ namespace Lykke.Terminal.Domain.Messaging.Dtos
     public class OrderBookMessageDto
     {
         public string AssetPair { get; set; }
-        public bool IsBuy { get; set; }
         public DateTime Timestamp { get; set; }
-        public IEnumerable<OrderBookDetailsDto> Prices { get; set; }
-
+        public IEnumerable<OrderBookDetailsDto> Bids { get; set; }
+        public IEnumerable<OrderBookDetailsDto> Asks { get; set; }
     }
 }

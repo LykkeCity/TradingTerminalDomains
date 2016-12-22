@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Lykke.Terminal.Domain.Infrastructure;
 
@@ -9,28 +10,38 @@ namespace Lykke.Terminal.Domain.Exchange
     {
         string ProductQuoteId { get; }
         string AssetPairId { get; set; }
-        bool IsBuy { get; set; }
         DateTime Timestamp { get; set; }
-        IEnumerable<ProductQuoteLine> Prices { get; set; }
+        IEnumerable<ProductQuoteData> BidPrices { get; set; }
+        IEnumerable<ProductQuoteData> AskPrices { get; set; }
     }
 
     public class ProductQuote : IProductQuote
     {
         public string ProductQuoteId { get; set; }
         public string AssetPairId { get; set; }
-        public bool IsBuy { get; set; }
         public DateTime Timestamp { get; set; }
-        public IEnumerable<ProductQuoteLine> Prices { get; set; }
+        public IEnumerable<ProductQuoteData> BidPrices { get; set; }
+        public IEnumerable<ProductQuoteData> AskPrices { get; set; }
+
+        public decimal IndicativeAskPrice
+        {
+            get { return AskPrices.OrderBy(x => x.Price).First().Price; }
+        }
+
+        public decimal IndicativeBidPrice
+        {
+            get { return BidPrices.OrderBy(x => x.Price).Last().Price; }
+        }
     }
 
-    public class ProductQuoteLine
+    public class ProductQuoteData
     {
         public double Volume { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
     }
 
     public interface IProductQuoteRepository : IRepository<IProductQuote>
     {
-        Task<IEnumerable<IProductQuote>> GetByAssetPairIdAndBuy(IProductQuote entity);
+        Task<IProductQuote> GetByAssetPairId(IProductQuote entity);
     }
 }
