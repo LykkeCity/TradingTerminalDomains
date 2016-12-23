@@ -11,6 +11,6 @@ namespace Lykke.Terminal.Domain.Notifications
 
         Task ActiveOrdersUpdatedAsync(IEnumerable<OrderBase> orders);
 
-        Task OrderBookUpdatedAsync(OrderBookMessageDto message);
+        Task OrderBookUpdatedAsync(OrderBookMessageResponseDto message);
     }
 }
