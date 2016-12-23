@@ -8,7 +8,7 @@ namespace Lykke.Terminal.Domain.Trading
         Task CloseOrderAsync(IOrderBase activeOrder, OrderComment orderComment);
         bool IsTakeProfitCorrect(IOrderBase order, double price);
         bool IsStopLossCorrect(IOrderBase order, double price);
-        bool IsTakeProfitReached(IOrderBase order, IAssetPairQuote assetPairQuote);
-        bool IsStopLossReached(IOrderBase order, IAssetPairQuote assetPairQuote);
+        bool IsTakeProfitReached(IOrderBase order, IProductQuote productQuote);
+        bool IsStopLossReached(IOrderBase order, IProductQuote productQuote);
     }
 }
