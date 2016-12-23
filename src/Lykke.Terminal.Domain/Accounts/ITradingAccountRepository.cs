@@ -9,7 +9,7 @@ namespace Lykke.Terminal.Domain.Accounts
     {
         string TradingAccountId { get; }
         string AccountId { get; }
-        double Balance { get; }
+        decimal Balance { get; }
         string BaseAssetId { get; }
         double Leverage { get; }
         double StopOut { get; }
@@ -19,7 +19,7 @@ namespace Lykke.Terminal.Domain.Accounts
     {
         public string TradingAccountId { get; set; }
         public string AccountId { get; set; }
-        public double Balance { get; set; }
+        public decimal Balance { get; set; }
         public string BaseAssetId { get; set; }
         public double Leverage { get; set; }
         public double StopOut { get; set; }
@@ -53,7 +53,7 @@ namespace Lykke.Terminal.Domain.Accounts
 
     public static class TradingAccountInfoDefaults
     {
-        public static double Balance = 50000;
+        public static decimal Balance = 50000;
         public static int Leverage = 200;
         public static string BaseAsset = "EUR";
         public static double StopOut = 20;

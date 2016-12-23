@@ -7,7 +7,7 @@ namespace Lykke.Terminal.Domain.Exchange
 {
     public interface IDoneOrder : IOrderBase
     {
-        double ProfitLoss { get; }
+        decimal ProfitLoss { get; }
     }
 
     public class DoneOrder : IDoneOrder
@@ -17,7 +17,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public string TradingAccountId { get; set; }
         public DateTime CreatedAt { get; set; }
         public double Volume { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public string AssetPairId { get; set; }
         public OrderStatus Status { get; set; }
         public double DefinedPrice { get; set; }
@@ -26,7 +26,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public double TakeProfit { get; set; }
         public double StopLoss { get; set; }
         public double Commission { get; set; }
-        public double ProfitLoss { get; set; }
+        public decimal ProfitLoss { get; set; }
     }
 
     public interface IDoneOrdersRepository : IRepository<IDoneOrder>
