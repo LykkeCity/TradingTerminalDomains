@@ -8,7 +8,7 @@ namespace Lykke.Terminal.Domain.Trading
 {
     public interface IOrderCalculator
     {
-        Task<decimal> CalculateProfitLossAsync(decimal openPrice, decimal closePrice, double volume, IAssetPair assetPair, string baseAssetId);
+        Task<decimal> CalculateProfitLossAsync(decimal openPrice, decimal closePrice, double volume, IInstrument instrument, string baseAssetId);
 
         Task<decimal> CalculateMarginUsageAsync(IEnumerable<IOrderBase> orders, ITradingAccount tradingAccount);
     }

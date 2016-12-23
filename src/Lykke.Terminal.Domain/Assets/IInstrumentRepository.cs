@@ -4,7 +4,7 @@ using Lykke.Terminal.Domain.Infrastructure;
 
 namespace Lykke.Terminal.Domain.Assets
 {
-    public interface IAssetPair
+    public interface IInstrument
     {
         string Id { get; }
         string Name { get; }
@@ -16,7 +16,7 @@ namespace Lykke.Terminal.Domain.Assets
         double SwapLong { get; }
     }
 
-    public class AssetPair : IAssetPair
+    public class Instrument : IInstrument
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -28,9 +28,9 @@ namespace Lykke.Terminal.Domain.Assets
         public double SwapLong { get; set; }
     }
 
-    public interface IAssetPairRepository : IRepository<IAssetPair>
+    public interface IInstrumentRepository : IRepository<IInstrument>
     {
-        Task AddAllAsync(IEnumerable<IAssetPair> assetPairs);
-        Task<IAssetPair> GetByBaseAndQuotingIds(string baseAssetId, string quotingAssetId);
+        Task AddAllAsync(IEnumerable<IInstrument> instruments);
+        Task<IInstrument> GetByBaseAndQuotingIds(string baseAssetId, string quotingAssetId);
     }
 }
