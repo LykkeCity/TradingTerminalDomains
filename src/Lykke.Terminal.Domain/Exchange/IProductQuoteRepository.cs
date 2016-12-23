@@ -42,6 +42,6 @@ namespace Lykke.Terminal.Domain.Exchange
 
     public interface IProductQuoteRepository : IRepository<IProductQuote>
     {
-        Task<IProductQuote> GetByAssetPairId(IProductQuote entity);
+        Task<IProductQuote> GetByAssetPairId(string assetPairId);
     }
 }
