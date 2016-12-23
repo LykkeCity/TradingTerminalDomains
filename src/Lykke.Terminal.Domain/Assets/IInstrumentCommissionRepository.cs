@@ -1,15 +1,15 @@
 ﻿namespace Lykke.Terminal.Domain.Assets
 {
-    public interface IAssetPairCommission
+    public interface IInstrumentCommission
     {
-        string AssetPairId { get; }
+        string InstrumentId { get; }
         double OpenCommission { get; }
         double CloseCommission { get; }
     }
 
-    public class AssetPairCommission : IAssetPairCommission
+    public class InstrumentCommission : IInstrumentCommission
     {
-        public string AssetPairId { get; set; }
+        public string InstrumentId { get; set; }
         public double OpenCommission { get; set; }
         public double CloseCommission { get; set; }
     }

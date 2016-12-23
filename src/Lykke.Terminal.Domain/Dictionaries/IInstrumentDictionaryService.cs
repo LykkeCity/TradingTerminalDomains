@@ -4,7 +4,7 @@ using Lykke.Terminal.Domain.Assets;
 
 namespace Lykke.Terminal.Domain.Dictionaries
 {
-    public interface IAssetPairDictionaryService
+    public interface IInstrumentDictionaryService
     {
         Task<IEnumerable<IInstrument>> GetAllAsync();
         Task<IInstrument> GetByBaseAndQuotingIds(string baseAssetId, string quotingAssetId);
