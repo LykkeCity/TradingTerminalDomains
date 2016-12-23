@@ -18,7 +18,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public DateTime CreatedAt { get; set; }
         public double Volume { get; set; }
         public decimal Price { get; set; }
-        public string AssetPairId { get; set; }
+        public string InstrumentId { get; set; }
         public OrderStatus Status { get; set; }
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }

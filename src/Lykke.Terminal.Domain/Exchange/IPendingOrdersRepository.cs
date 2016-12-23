@@ -6,6 +6,6 @@ namespace Lykke.Terminal.Domain.Exchange
 {
     public interface IPendingOrdersRepository : IRepository<IOrderBase>
     {
-        Task<IEnumerable<IOrderBase>> GetByAssetPairIdAsync(string assetPairId);
+        Task<IEnumerable<IOrderBase>> GetByInstrumentIdAsync(string instrumentId);
     }
 }

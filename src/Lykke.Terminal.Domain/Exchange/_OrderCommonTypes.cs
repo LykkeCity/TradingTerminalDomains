@@ -43,7 +43,7 @@ namespace Lykke.Terminal.Domain.Exchange
         DateTime CreatedAt { get; }
         double Volume { get; }
         decimal Price { get; }
-        string AssetPairId { get; }
+        string InstrumentId { get; }
         OrderStatus Status { get; }
         double DefinedPrice { get; }
         DateTime LastModified { get; }
@@ -61,7 +61,7 @@ namespace Lykke.Terminal.Domain.Exchange
         public DateTime CreatedAt { get; set; }
         public double Volume { get; set; }
         public decimal Price { get; set; }
-        public string AssetPairId { get; set; }
+        public string InstrumentId { get; set; }
         public OrderStatus Status { get; set; }
         public double DefinedPrice { get; set; }
         public DateTime LastModified { get; set; }
@@ -80,7 +80,7 @@ namespace Lykke.Terminal.Domain.Exchange
                 CreatedAt = src.CreatedAt,
                 Volume = src.Volume,
                 Price = src.Price,
-                AssetPairId = src.AssetPairId,
+                InstrumentId = src.InstrumentId,
                 Status = src.Status,
                 DefinedPrice = src.DefinedPrice,
                 LastModified = src.LastModified,

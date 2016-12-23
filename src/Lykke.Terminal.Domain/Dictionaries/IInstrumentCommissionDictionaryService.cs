@@ -7,6 +7,6 @@ namespace Lykke.Terminal.Domain.Dictionaries
     public interface IInstrumentCommissionDictionaryService
     {
         Task<IEnumerable<IInstrumentCommission>> GetAllAsync();
-        Task<IInstrumentCommission> GetByAssetPairIdAsync(string assetPairId);
+        Task<IInstrumentCommission> GetByInstrumentIdAsync(string instrumentId);
     }
 }

@@ -8,6 +8,6 @@ namespace Lykke.Terminal.Domain.Exchange
     {
         Task<IEnumerable<IOrderBase>> GetByClientId(string clientId);
         Task<IEnumerable<IOrderBase>> GetByTradingAccountIdAsync(string tradingAccountId);
-        Task<IEnumerable<IOrderBase>> GetByAssetPairIdAsync(string assetPairId);
+        Task<IEnumerable<IOrderBase>> GetByInstrumentIdAsync(string instrumentId);
     }
 }

@@ -9,7 +9,7 @@ namespace Lykke.Terminal.Domain.Exchange
     public interface IProductQuote
     {
         string ProductQuoteId { get; }
-        string AssetPairId { get; set; }
+        string InstrumentId { get; set; }
         DateTime Timestamp { get; set; }
         IEnumerable<ProductQuoteData> BidPrices { get; set; }
         IEnumerable<ProductQuoteData> AskPrices { get; set; }
@@ -18,7 +18,7 @@ namespace Lykke.Terminal.Domain.Exchange
     public class ProductQuote : IProductQuote
     {
         public string ProductQuoteId { get; set; }
-        public string AssetPairId { get; set; }
+        public string InstrumentId { get; set; }
         public DateTime Timestamp { get; set; }
         public IEnumerable<ProductQuoteData> BidPrices { get; set; }
         public IEnumerable<ProductQuoteData> AskPrices { get; set; }
@@ -42,6 +42,6 @@ namespace Lykke.Terminal.Domain.Exchange
 
     public interface IProductQuoteRepository : IRepository<IProductQuote>
     {
-        Task<IProductQuote> GetByAssetPairId(string assetPairId);
+        Task<IProductQuote> GetByInstrumentId(string instrumentId);
     }
 }
